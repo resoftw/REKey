@@ -30,37 +30,191 @@
         {
             this.lbl = new System.Windows.Forms.Label();
             this.tb = new System.Windows.Forms.TextBox();
+            this.lblctrl = new System.Windows.Forms.Label();
+            this.lblalt = new System.Windows.Forms.Label();
+            this.lblshift = new System.Windows.Forms.Label();
+            this.lbrshift = new System.Windows.Forms.Label();
+            this.lbrctrl = new System.Windows.Forms.Label();
+            this.lbralt = new System.Windows.Forms.Label();
+            this.lblwin = new System.Windows.Forms.Label();
+            this.lbrwin = new System.Windows.Forms.Label();
+            this.lbctx = new System.Windows.Forms.Label();
+            this.lblstat = new System.Windows.Forms.Label();
+            this.lblstat2 = new System.Windows.Forms.Label();
+            this.lblstat3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbl
             // 
-            this.lbl.Dock = System.Windows.Forms.DockStyle.Top;
             this.lbl.Font = new System.Drawing.Font("Segoe UI", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl.ForeColor = System.Drawing.Color.White;
             this.lbl.Location = new System.Drawing.Point(0, 0);
+            this.lbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl.Name = "lbl";
-            this.lbl.Size = new System.Drawing.Size(800, 220);
+            this.lbl.Size = new System.Drawing.Size(468, 92);
             this.lbl.TabIndex = 0;
             this.lbl.Text = "Label";
             // 
             // tb
             // 
             this.tb.AcceptsReturn = true;
-            this.tb.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tb.Location = new System.Drawing.Point(0, 220);
+            this.tb.Location = new System.Drawing.Point(11, 218);
+            this.tb.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.tb.Multiline = true;
             this.tb.Name = "tb";
-            this.tb.Size = new System.Drawing.Size(800, 696);
+            this.tb.Size = new System.Drawing.Size(443, 201);
             this.tb.TabIndex = 1;
+            // 
+            // lblctrl
+            // 
+            this.lblctrl.AutoSize = true;
+            this.lblctrl.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblctrl.ForeColor = System.Drawing.Color.DarkGray;
+            this.lblctrl.Location = new System.Drawing.Point(12, 133);
+            this.lblctrl.Name = "lblctrl";
+            this.lblctrl.Size = new System.Drawing.Size(62, 30);
+            this.lblctrl.TabIndex = 2;
+            this.lblctrl.Text = "CTRL";
+            // 
+            // lblalt
+            // 
+            this.lblalt.AutoSize = true;
+            this.lblalt.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblalt.ForeColor = System.Drawing.Color.DarkGray;
+            this.lblalt.Location = new System.Drawing.Point(142, 133);
+            this.lblalt.Name = "lblalt";
+            this.lblalt.Size = new System.Drawing.Size(47, 30);
+            this.lblalt.TabIndex = 3;
+            this.lblalt.Text = "ALT";
+            // 
+            // lblshift
+            // 
+            this.lblshift.AutoSize = true;
+            this.lblshift.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblshift.ForeColor = System.Drawing.Color.DarkGray;
+            this.lblshift.Location = new System.Drawing.Point(12, 92);
+            this.lblshift.Name = "lblshift";
+            this.lblshift.Size = new System.Drawing.Size(56, 30);
+            this.lblshift.TabIndex = 4;
+            this.lblshift.Text = "Shift";
+            // 
+            // lbrshift
+            // 
+            this.lbrshift.AutoSize = true;
+            this.lbrshift.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbrshift.ForeColor = System.Drawing.Color.DarkGray;
+            this.lbrshift.Location = new System.Drawing.Point(391, 92);
+            this.lbrshift.Name = "lbrshift";
+            this.lbrshift.Size = new System.Drawing.Size(56, 30);
+            this.lbrshift.TabIndex = 5;
+            this.lbrshift.Text = "Shift";
+            // 
+            // lbrctrl
+            // 
+            this.lbrctrl.AutoSize = true;
+            this.lbrctrl.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbrctrl.ForeColor = System.Drawing.Color.DarkGray;
+            this.lbrctrl.Location = new System.Drawing.Point(391, 133);
+            this.lbrctrl.Name = "lbrctrl";
+            this.lbrctrl.Size = new System.Drawing.Size(62, 30);
+            this.lbrctrl.TabIndex = 6;
+            this.lbrctrl.Text = "CTRL";
+            // 
+            // lbralt
+            // 
+            this.lbralt.AutoSize = true;
+            this.lbralt.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbralt.ForeColor = System.Drawing.Color.DarkGray;
+            this.lbralt.Location = new System.Drawing.Point(218, 133);
+            this.lbralt.Name = "lbralt";
+            this.lbralt.Size = new System.Drawing.Size(47, 30);
+            this.lbralt.TabIndex = 7;
+            this.lbralt.Text = "ALT";
+            // 
+            // lblwin
+            // 
+            this.lblwin.AutoSize = true;
+            this.lblwin.Font = new System.Drawing.Font("HoloLens MDL2 Assets", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblwin.ForeColor = System.Drawing.Color.DarkGray;
+            this.lblwin.Location = new System.Drawing.Point(80, 136);
+            this.lblwin.Name = "lblwin";
+            this.lblwin.Size = new System.Drawing.Size(31, 21);
+            this.lblwin.TabIndex = 8;
+            this.lblwin.Text = "";
+            // 
+            // lbrwin
+            // 
+            this.lbrwin.AutoSize = true;
+            this.lbrwin.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbrwin.ForeColor = System.Drawing.Color.DarkGray;
+            this.lbrwin.Location = new System.Drawing.Point(271, 133);
+            this.lbrwin.Name = "lbrwin";
+            this.lbrwin.Size = new System.Drawing.Size(56, 30);
+            this.lbrwin.TabIndex = 9;
+            this.lbrwin.Text = "WIN";
+            // 
+            // lbctx
+            // 
+            this.lbctx.AutoSize = true;
+            this.lbctx.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbctx.ForeColor = System.Drawing.Color.DarkGray;
+            this.lbctx.Location = new System.Drawing.Point(333, 133);
+            this.lbctx.Name = "lbctx";
+            this.lbctx.Size = new System.Drawing.Size(52, 30);
+            this.lbctx.TabIndex = 10;
+            this.lbctx.Text = "CTX";
+            // 
+            // lblstat
+            // 
+            this.lblstat.AutoSize = true;
+            this.lblstat.ForeColor = System.Drawing.Color.White;
+            this.lblstat.Location = new System.Drawing.Point(21, 185);
+            this.lblstat.Name = "lblstat";
+            this.lblstat.Size = new System.Drawing.Size(38, 15);
+            this.lblstat.TabIndex = 11;
+            this.lblstat.Text = "label1";
+            // 
+            // lblstat2
+            // 
+            this.lblstat2.AutoSize = true;
+            this.lblstat2.ForeColor = System.Drawing.Color.White;
+            this.lblstat2.Location = new System.Drawing.Point(181, 185);
+            this.lblstat2.Name = "lblstat2";
+            this.lblstat2.Size = new System.Drawing.Size(38, 15);
+            this.lblstat2.TabIndex = 12;
+            this.lblstat2.Text = "label1";
+            // 
+            // lblstat3
+            // 
+            this.lblstat3.AutoSize = true;
+            this.lblstat3.ForeColor = System.Drawing.Color.White;
+            this.lblstat3.Location = new System.Drawing.Point(333, 185);
+            this.lblstat3.Name = "lblstat3";
+            this.lblstat3.Size = new System.Drawing.Size(38, 15);
+            this.lblstat3.TabIndex = 13;
+            this.lblstat3.Text = "label1";
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(800, 916);
+            this.BackColor = System.Drawing.Color.Black;
+            this.ClientSize = new System.Drawing.Size(465, 429);
+            this.Controls.Add(this.lblstat3);
+            this.Controls.Add(this.lblstat2);
+            this.Controls.Add(this.lblstat);
+            this.Controls.Add(this.lbctx);
+            this.Controls.Add(this.lbrwin);
+            this.Controls.Add(this.lblwin);
+            this.Controls.Add(this.lbralt);
+            this.Controls.Add(this.lbrctrl);
+            this.Controls.Add(this.lbrshift);
+            this.Controls.Add(this.lblshift);
+            this.Controls.Add(this.lblalt);
+            this.Controls.Add(this.lblctrl);
             this.Controls.Add(this.tb);
             this.Controls.Add(this.lbl);
+            this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.Name = "MainForm";
             this.Text = "REKey";
             this.TopMost = true;
@@ -74,5 +228,17 @@
 
         private Label lbl;
         private TextBox tb;
+        private Label lblctrl;
+        private Label lblalt;
+        private Label lblshift;
+        private Label lbrshift;
+        private Label lbrctrl;
+        private Label lbralt;
+        private Label lblwin;
+        private Label lbrwin;
+        private Label lbctx;
+        private Label lblstat;
+        private Label lblstat2;
+        private Label lblstat3;
     }
 }

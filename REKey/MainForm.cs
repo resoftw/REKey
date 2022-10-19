@@ -63,11 +63,17 @@ namespace REKey
 
         private void KeyboardHook_KeyboardPressed(object? sender, GlobalKeyboardHookEventArgs e)
         {
-            if (e.KeyboardState == GlobalKeyboardHook.KeyboardState.KeyUp)
+            int VC = e.KeyboardData.VirtualCode;
+            lblstat.Text=e.KeyboardState.ToString();
+            lblstat2.Text=e.KeyboardData.Flags.ToString();
+            lblstat3.Text = e.KeyboardData.TimeStamp.ToString();
+            if (e.KeyboardState== GlobalKeyboardHook.KeyboardState.KeyDown)
             {
+                if (VC == KEYS.LCTRL) lblctrl.ForeColor = Color.Yellow;
+                //if (VC == KEYS.RCTRL) 
                 string s = GetLocalizedKeyStringUnsafe(e.KeyboardData.VirtualCode);
                 Keys.Add(s);
-                tb.AppendText(s+Environment.NewLine);
+                tb.AppendText($"{s} - {e.KeyboardData.VirtualCode} {(int)e.KeyboardState}" + Environment.NewLine);
                 if (Keys.Count > 10) { Keys.RemoveRange(0, 1); }
                 s = "";
                 foreach (var k in Keys)
@@ -75,6 +81,13 @@ namespace REKey
                     s += k;
                 }
                 lbl.Text = s;
+            }
+            if (e.KeyboardState == GlobalKeyboardHook.KeyboardState.KeyUp)
+            {
+                if (e.KeyboardData.VirtualCode == KEYS.LCTRL)
+                {
+                    lblctrl.ForeColor = Color.LightGray;
+                }
             }
         }
 
