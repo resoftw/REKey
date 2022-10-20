@@ -24,7 +24,7 @@ namespace REKey
         private static extern int GetKeyNameText(int lParam, [MarshalAs(UnmanagedType.LPWStr), Out] StringBuilder str, int size);
 
         private GlobalKeyboardHook KeyboardHook;
-        private List<String> Keys=new List<String>();
+        private List<String> KeysList=new List<String>();
         private static string GetLocalizedKeyStringUnsafe(int key)
         {
             //https://stackoverflow.com/questions/38584015/using-getkeynametext-with-special-keys
@@ -61,6 +61,13 @@ namespace REKey
             KeyboardHook.KeyboardPressed += KeyboardHook_KeyboardPressed;
         }
 
+        private void KeyLockState()
+        {
+            lblcaps.ForeColor = Control.IsKeyLocked(Keys.CapsLock) ? Color.Lime : Color.DarkGray;
+            lblnum.ForeColor = Control.IsKeyLocked(Keys.NumLock) ? Color.Lime : Color.DarkGray;
+            lblscroll.ForeColor = Control.IsKeyLocked(Keys.Scroll) ? Color.Lime : Color.DarkGray;
+        }
+
         private void KeyboardHook_KeyboardPressed(object? sender, GlobalKeyboardHookEventArgs e)
         {
             int VC = e.KeyboardData.VirtualCode;
@@ -72,11 +79,11 @@ namespace REKey
                 if (VC == KEYS.LCTRL) lblctrl.ForeColor = Color.Yellow;
                 //if (VC == KEYS.RCTRL) 
                 string s = GetLocalizedKeyStringUnsafe(e.KeyboardData.VirtualCode);
-                Keys.Add(s);
+                KeysList.Add(s);
                 tb.AppendText($"{s} - {e.KeyboardData.VirtualCode} {(int)e.KeyboardState}" + Environment.NewLine);
-                if (Keys.Count > 10) { Keys.RemoveRange(0, 1); }
+                if (KeysList.Count > 10) { KeysList.RemoveRange(0, 1); }
                 s = "";
-                foreach (var k in Keys)
+                foreach (var k in KeysList)
                 {
                     s += k;
                 }
@@ -88,12 +95,33 @@ namespace REKey
                 {
                     lblctrl.ForeColor = Color.LightGray;
                 }
+                KeyLockState();
             }
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             KeyboardHook?.Dispose();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            tmr.Enabled = true;
+        }
+
+        private void tmr_Tick(object sender, EventArgs e)
+        {
+            KeyLockState();
+        }
+
+        private void traymenu_Opening(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
